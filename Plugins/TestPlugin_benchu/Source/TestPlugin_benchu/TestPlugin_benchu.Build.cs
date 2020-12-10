@@ -2,9 +2,10 @@
 
 using UnrealBuildTool;
 
-public class MyTestPlugin : ModuleRules
+public class TestPlugin_benchu : ModuleRules
 {
-	public MyTestPlugin(ReadOnlyTargetRules Target) : base(Target)
+	
+	public TestPlugin_benchu(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
@@ -26,8 +27,6 @@ public class MyTestPlugin : ModuleRules
 			new string[]
 			{
 				"Core",
-				"MyTestPluginLibrary",
-				"Projects"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -36,6 +35,10 @@ public class MyTestPlugin : ModuleRules
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
 			{
+				"CoreUObject",
+				"Engine",
+				"Slate",
+				"SlateCore",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
@@ -47,5 +50,7 @@ public class MyTestPlugin : ModuleRules
 				// ... add any modules that your module loads dynamically here ...
 			}
 			);
+
+		
 	}
 }
